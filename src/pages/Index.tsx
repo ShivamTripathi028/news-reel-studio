@@ -123,8 +123,8 @@ const Index = () => {
     <div className="min-h-screen bg-slate-50 flex flex-col">
       <Header />
       <main className="flex-grow flex items-center justify-center py-6">
-        <div className="w-full max-w-md">
-          <Card className="shadow-md">
+        <div className="w-full max-w-xl px-4"> {/* Increased max-w from max-w-md to max-w-xl */}
+          <Card className="shadow-md w-full"> {/* Added w-full to ensure full width within container */}
             <CardHeader className="text-center">
               <CardTitle className="text-2xl">Convert Your Newspaper Article to Video</CardTitle>
               {appState === AppState.FORM && (
