@@ -101,7 +101,7 @@ const Index = () => {
       case AppState.FORM:
       default:
         return (
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="space-y-4">
             <ImageUpload onImageChange={handleImageChange} />
             <LanguageSelector 
               selectedLanguage={language} 
@@ -109,7 +109,7 @@ const Index = () => {
             />
             <Button 
               type="submit" 
-              className="w-full"
+              className="w-full mt-4"
               disabled={!image}
             >
               Generate Video
@@ -120,10 +120,10 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50 flex flex-col">
       <Header />
-      <main className="container py-6">
-        <div className="max-w-xl mx-auto">
+      <main className="flex-grow flex items-center justify-center py-6">
+        <div className="w-full max-w-md">
           <Card className="shadow-md">
             <CardHeader className="text-center">
               <CardTitle className="text-2xl">Convert Your Newspaper Article to Video</CardTitle>
@@ -133,7 +133,7 @@ const Index = () => {
                 </p>
               )}
             </CardHeader>
-            <CardContent>
+            <CardContent className="px-6 pb-6">
               {renderContent()}
             </CardContent>
           </Card>
